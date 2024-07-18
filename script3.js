@@ -60,6 +60,32 @@
 
 
 // 자식요소의 텍스트는 포함하기 않도록 수정 ----------------------------------------------
+// let $p = document.querySelectorAll("p");
+// let $button = document.querySelectorAll("button");
+
+// $p.forEach((ps) => {
+//     ps.addEventListener('click',function(e){
+//         let $ptext = e.target.textContent.split('삭제');
+//         console.log($ptext[0]);
+//         alert($ptext[0]);
+//         e.stopPropagation();
+//     },false);
+// });
+
+// $button.forEach(buttons => {
+//     buttons.addEventListener('click',function(e){
+//         let confirm = window.confirm("삭제하시겠습니까?")
+//         e.stopPropagation();
+//         if(confirm == true){
+//             this.parentNode.remove();
+//         }else{
+//             return;
+//         }
+//     });
+// });
+
+
+// stopPropagation 굳이 false안써도 될것같음 수정 -------------------------------------
 let $p = document.querySelectorAll("p");
 let $button = document.querySelectorAll("button");
 
@@ -69,7 +95,7 @@ $p.forEach((ps) => {
         console.log($ptext[0]);
         alert($ptext[0]);
         e.stopPropagation();
-    },false);
+    });
 });
 
 $button.forEach(buttons => {
