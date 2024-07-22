@@ -17,9 +17,7 @@
             console.log(`${this.material1}와(과) ${this.material2} 맛이 난다!`);
         }
     }
-    const sausage = new Sausage("소고기","파");
-    console.log(sausage.taste());
-
+    
     // 파생클래스
     class FiresSausage extends Sausage{
         constructor(material1,material2){
@@ -31,5 +29,9 @@
             console.log(`불맛이 나기 시작합니다`);
         }
     }
+    const sausage = new Sausage("소고기","파");
     const firesSausage = new FiresSausage("돼지고기","양파");
-    console.log(firesSausage.taste());
+
+    // 콘솔에 넣을필요없음! 메서드안에 있음!
+    sausage.taste();
+    firesSausage.taste();
