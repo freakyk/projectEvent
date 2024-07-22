@@ -9,3 +9,6 @@ https://freakyk.github.io/projectEvent/index3.html
 
 ### FE 실습 todoList input 추가/삭제
 https://freakyk.github.io/projectEvent/index4.html
+
+###FE 실습 class 생성사함수, 파생클래스
+https://freakyk.github.io/projectEvent/index5.html
