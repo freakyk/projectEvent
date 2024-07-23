@@ -1,6 +1,6 @@
 // fetch로 해보기 ------------------------------------------------------------
 
-let requestObj = fetch('http://test.api.weniv.co.kr/mall');
+let requestObj = fetch('https://test.api.weniv.co.kr/mall');
 
 requestObj.then((req) => {
     return req.json();
