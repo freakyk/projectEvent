@@ -18,3 +18,6 @@ https://freakyk.github.io/projectEvent/index6.html
 
 ### FE 실습 promise 바꾸기
 https://freakyk.github.io/projectEvent/index7.html
+
+### FE 실습 fetch로 바꾸기
+https://freakyk.github.io/projectEvent/index8.html
