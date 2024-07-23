@@ -2,7 +2,7 @@
 
 const request = new XMLHttpRequest();
 
-request.open('get','http://test.api.weniv.co.kr/mall');
+request.open('get','https://test.api.weniv.co.kr/mall');
 
 request.onload = () => {
     if(request.status === 200){
