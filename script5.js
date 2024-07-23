@@ -11,7 +11,6 @@
         constructor(material1,material2){
             this.material1 = material1;
             this.material2 = material2;
-
         }
         taste(){
             console.log(`${this.material1}와(과) ${this.material2} 맛이 난다!`);
@@ -20,12 +19,11 @@
     
     // 파생클래스
     class FiresSausage extends Sausage{
-        constructor(material1,material2){
-            // this.material1 = material1;
-            // this.material2 = material2;
-            super(material1,material2);
-        }
+        // constructor(material1,material2){
+        //     super(material1,material2);
+        // }
         taste(){
+            super.taste();
             console.log(`불맛이 나기 시작합니다`);
         }
     }

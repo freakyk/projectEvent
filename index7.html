@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise 실습</title>
+</head>
+<body>
+    
+    <script>
+        // 해당코드를 이용해서 요청을 보내고 응답을 받아 화면에 적절하게 그려주기(css하지말기)
+        // const requestObj = new XMLHttpRequest();
+        // requestObj.open('GET', 'https://test.api.weniv.co.kr/mall');
+        // requestObj.onreadystatechange = () => {
+        //     if (requestObj.readyState === 4 && requestObj.status === 200) {
+
+        //     }
+        //     else if(requestObj.readyState === 4 && requestObj.status !== 200){
+
+        //     }
+        // };
+        // requestObj.send();
+        // const req = new Promise((resolve, reject)=>{
+
+        // })
+
+        // --------------------------------------------------------------------
+
+        const req = new Promise((resolve, reject)=>{
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'https://test.api.weniv.co.kr/mall');
+            requestObj.onreadystatechange = () => {
+                console.log(requestObj.status);
+                console.log(requestObj.readyState);
+
+                if (requestObj.readyState === 4 && requestObj.status === 200) {
+                    const result = JSON.parse(requestObj.responseText);
+                    resolve(result);
+                }
+                else if(requestObj.readyState === 4 && requestObj.status !== 200){
+                    reject(new Error (`실행실패 : ${requestObj.status}`))
+                }
+            };
+            requestObj.send();
+        })
+
+        req.then((result) => {
+            console.log(result);
+        }).catch((error) => {
+            console.log("에러");
+        })
+    </script>
+</body>
+</html>

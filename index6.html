@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise fetch</title>
+</head>
+<body>
+
+    <script>
+    /*
+        let result;
+        function xhrRequest() {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', '파일이름');
+            requestObj.onreadystatechange = () => {
+                if (requestObj.readyState === 4 && requestObj.status === 200) {
+                    result = requestObj.responseText;
+                }
+            };
+            requestObj.send();
+        }
+        xhrRequest();
+
+        1. 해당 코드를 이용하여 hello.txt를 화면에 불러오기
+        2. promise를 이용해서 .then에서 화면에 그려주는 로직을 동작하게 하기
+
+    */
+
+    /*
+    // 01 ------------------------------------------------------------------
+        let result;
+        function xhrRequest() {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'hello.txt');
+            requestObj.onreadystatechange = () => {
+                if (requestObj.readyState === 4 && requestObj.status === 200) {
+                    result = requestObj.responseText;
+                    document.write(result);
+                }
+            };
+            requestObj.send();
+        }
+        xhrRequest();
+    */
+   
+   /*
+   // 02 promise ------------------------------------------------------------------
+
+        // promise 생성
+        const xhrRequest = new Promise((resolve, reject) => {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'hello.txt');
+            requestObj.onreadystatechange = () => {
+                // 요청상태가 변할때마다 호출되므로 서버전송완료를 체크해야함
+                if(requestObj.readyState === 4){
+                    if (requestObj.status === 200) {
+                        let result = requestObj.responseText;
+                        resolve(result);
+                    }else{
+                        reject(new Error(`hello 출력불가 : ${requestObj.status} / ${requestObj.readyState}`))
+                    }
+                }
+            };
+            requestObj.send();
+        });
+        
+        // promise 사용
+        xhrRequest.then((asyncResult) => {
+            document.write(asyncResult);
+            console.log("약속이 이루어졌습니다.");
+            return asyncResult;
+        }).catch((error) => {
+            console.log(error);
+        })
+    */
+
+    // 03 fetch ------------------------------------------------------------------
+  
+    //     const fetchRequest = fetch('hello.txt').then(response => {
+    //         if (!response.ok) {
+    //             throw new Error('HTTP error! status: ' + response.status);
+    //         }
+    //         return response.text();
+    //     });
+    
+    // fetchRequest.then(result => {
+    //     document.write(result);
+    // })
+    // .catch(error => {
+    //     console.error('Error:', error);
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
