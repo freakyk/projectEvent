@@ -2,7 +2,7 @@
 
 const promise = new Promise((resolve, reject) =>{
     const requestObj = new XMLHttpRequest();
-    requestObj.open('GET','http://test.api.weniv.co.kr/mall');
+    requestObj.open('GET','https://test.api.weniv.co.kr/mall');
     
     requestObj.onreadystatechange = () => {
         if(requestObj.readyState === 4){
