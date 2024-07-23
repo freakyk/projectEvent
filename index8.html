@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch로 바꾸기</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+
+        // fetch로 바꾸기 ---------------------------------------------
+        function product (data){
+            // 상품을 그려줄 컨테이너
+            const $root = document.querySelector(`#root`);
+            const $productDiv = document.createElement('div');
+            const $productName = document.createElement('h2');
+            const $productImage = document.createElement('img');
+
+            // 각 요소에 데이터 넣기
+            $productName.textContent = data.productName;
+            $productImage.src = "https://test.api.weniv.co.kr/" + data.thumbnailImg;
+            $productDiv.append($productName, $productImage);
+            $root.append($productDiv);
+        }
+
+        let fetchObj = fetch('https://test.api.weniv.co.kr/mall');
+        fetchObj.then((res) => {
+            return res.json();
+        })
+        .then((result) => {
+            console.log("result : " + JSON.stringify(result));
+            result.forEach(product);
+            return result;
+        })
+        .catch((error) => {
+            console.log("error : " + error);
+        })
+
+    </script>
+</body>
+</html>
