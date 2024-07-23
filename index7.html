@@ -46,9 +46,31 @@
 
         req.then((result) => {
             console.log(result);
+            
+            let $ul = document.createElement('ul');
+            result.forEach((el) => {
+                let $li = document.createElement('li');
+                let $span = document.createElement('span');
+                let $strong = document.createElement('strong');
+                
+                $li.id = el.id;
+                $span.textContent = el.productName;
+                $strong.textContent = el.price;
+
+                $ul.append($li);
+                $li.append($span);
+                $li.append($strong);
+            })
+            document.body.append($ul);
+
+            // let jsonString = JSON.stringify(result);
+            // divMain.append(jsonString);
+
         }).catch((error) => {
             console.log("에러");
         })
+
+
     </script>
 </body>
 </html>
