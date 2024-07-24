@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json 데이터 주고받기</title>
+</head>
+<body>
+    <section>
+        <h2>WHATS IN MY 배</h2>
+        <form>
+            <input type="text">
+            <button>먹었음!</button>
+        </form>
+        <ul></ul>
+    </section>
+
+    <script>
+        const $input = document.querySelector("input");
+        const $button = document.querySelector("button");
+        const $ul = document.querySelector("ul");
+        const $form = document.querySelector("form");
+
+        const fetchWrap = async function(){
+            const fetchUrl = await fetch('http://localhost:3001/menu');
+            const parsingFetch = await fetchUrl.json();
+
+            parsingFetch.forEach(ate => {
+                const $li = document.createElement('li');
+                $ul.append($li);  
+                $li.innerText = ate.name +" - 평점 : "+ ate.평점;
+            });
+        }
+        fetchWrap();
+
+        const addMenu = function(){
+            const ateInput = $input.value;
+            const newAteData = {
+                "name" : ateInput,
+                "평점" : ateInput.length
+            }
+
+            fetch("http://localhost:3001/menu",{
+                method: "POST",
+                headers:{
+                "Content-type":"application/json"
+                },
+                body: JSON.stringify(newAteData),
+            })
+        }
+
+
+        $form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            addMenu();
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
