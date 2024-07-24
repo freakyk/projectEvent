@@ -13,5 +13,5 @@ https://freakyk.github.io/projectEvent/index4.html
 ### FE 실습 class 생성자함수, 파생클래스
 https://freakyk.github.io/projectEvent/index5.html
 
-### FE 실습 XHR promise, fetch
+### FE 실습 XHR, promise, fetch
 https://freakyk.github.io/projectEvent/연습하기/index.html
