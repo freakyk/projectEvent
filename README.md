@@ -15,3 +15,6 @@ https://freakyk.github.io/projectEvent/index5.html
 
 ### FE 실습 XHR, promise, fetch
 https://freakyk.github.io/projectEvent/연습하기/index.html
+
+### FE 실습 json server (database)
+https://freakyk.github.io/projectEvent/json/index.html
