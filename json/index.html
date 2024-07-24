@@ -21,10 +21,10 @@
         const $ul = document.querySelector("ul");
         const $form = document.querySelector("form");
 
+        // 여기는 저장된 데이터 객체를 화면에 뿌려주는거
         const fetchWrap = async function(){
             const fetchUrl = await fetch('http://localhost:3001/menu');
             const parsingFetch = await fetchUrl.json();
-
             parsingFetch.forEach(ate => {
                 const $li = document.createElement('li');
                 $ul.append($li);  
@@ -33,22 +33,21 @@
         }
         fetchWrap();
 
+        // 여기는 입력한 데이터를 문자열화시켜서 저장하는거
         const addMenu = function(){
             const ateInput = $input.value;
             const newAteData = {
                 "name" : ateInput,
                 "평점" : ateInput.length
             }
-
             fetch("http://localhost:3001/menu",{
                 method: "POST",
                 headers:{
-                "Content-type":"application/json"
+                    "Content-type":"application/json"
                 },
                 body: JSON.stringify(newAteData),
             })
         }
-
 
         $form.addEventListener("submit", (e) => {
             e.preventDefault();
