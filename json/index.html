@@ -21,7 +21,7 @@
         const $ul = document.querySelector("ul");
         const $form = document.querySelector("form");
 
-        // 여기는 저장된 데이터 객체를 화면에 뿌려주는거
+        // 여기는 저장된 데이터 객체를 화면에 뿌려주는거 (파싱)
         const fetchWrap = async function(){
             const fetchUrl = await fetch('http://localhost:3001/menu');
             const parsingFetch = await fetchUrl.json();
@@ -53,29 +53,6 @@
             e.preventDefault();
             addMenu();
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
 </body>
