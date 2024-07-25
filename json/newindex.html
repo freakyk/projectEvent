@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만들기</title>
+    <style>
+        h2{font-size:25px;text-transform:uppercase;text-align: center;}
+        h2 + strong{margin-bottom:30px;display:block;color:orange;text-align: center;font-size:14px;}
+        button{cursor: pointer;}
+        button:hover{background: #cccccc;}
+        form{background:#dddddd;text-align: center;padding:20px 0;}
+        form input{padding:10px;}
+        ul{padding:0;}
+        li{background: #333333;color:white;margin:5px 0;padding:10px;text-align: right;}
+        li:first-child{background:lightseagreen}
+        li input[type="checkbox"]{float:left;}
+        li span{font-weight: bold;letter-spacing: 5px;margin:0 10px;float:left;}
+        li button{border:none;background:skyblue;padding:5px 10px;margin:10px 5px;font-weight: bold;}
+        li button + button{color:red;background: orange;}
+    </style>
+</head>
+<body>
+    <article>
+        <h2>whats in my 배</h2>
+        <strong>맛있었던건 체크하기</strong>
+        <form>
+            <input class="inputText" type="text" placeholder="최근에 먹은거 쓰기">
+            <button type="submit" class="add">먹었음!</button>
+        </form>
+        <div class="list">
+            <ul>
+                <li class="ex">
+                    <span>ex. 팥붕어빵</span>
+                </li>
+            </ul>
+        </div>
+    </article>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

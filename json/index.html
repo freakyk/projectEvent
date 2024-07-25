@@ -51,9 +51,12 @@
 
         $form.addEventListener("submit", (e) => {
             e.preventDefault();
-            addMenu();
+            if($input.value !== ""){
+                addMenu();
+            }else{
+                alert("입력필수!")
+            }
         });
-
     </script>
 </body>
 </html>
